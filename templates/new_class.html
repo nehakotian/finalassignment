@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block body %}
+<br>
+<h1 align="center">Add new class details </h1>
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+<div class="alert alert-danger">
+    {{ message }}
+</div>
+{%- endfor %}
+
+<center>
+    <form method="POST" action="/new_class">
+    <br>
+    <label for="name">Enter name of the class:</label>
+    <input type="text" name="class_name"/>
+    <br><br>
+    <input class="btn btn-success" type="submit" value="Add class">
+</form>
+    </center>
+{% endblock %}

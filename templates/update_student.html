@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+<div class="alert alert-danger">
+    {{ message }}
+</div>
+{%- endfor %}
+<center>
+<br>
+<h3>Update details</h3>
+<br>
+
+<form action="./update" method="post">
+    <label for="id">ID:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="hidden" name="old_id" value="{{student.student_id}}">
+    <input type="text" name="student_id" placeholder="{{student.student_id}}" value="{{student.student_id}}"/><br>
+    <label for="name">Name: </label>
+    <input type="text" name="student_name" placeholder="{{student.student_name}}" value="{{student.student_name}}" /><br>
+    <label for="Class">Class:&nbsp</label>
+    <input type="text" name="class_id" placeholder="{{student.class_id}}" value="{{student.class_id}}" /><br>
+    Class Leader: &nbsp&nbsp&nbsp&nbsp
+    <select name="class_leader">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+    </select><br><br>
+    <input type="submit" value="Submit" class="btn btn-success"/>
+</form>
+    </center>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<br>
+<h3 align="center">Class details</h3>
+<br>
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Added on</th>
+        <th>Modified on</th>
+        <th>Class leader</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for class in classes %}
+    <tr>
+        <td>{{class.class_id}}</td>
+        <td>{{ class.class_name }}</td>
+        <td>{{ class.created_on }}</td>
+        <td>{{ class.updated_on }}</td>
+        <td>{{ class.class_leader }}</td>
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<center>
+<a href="{{ url_for('new_class') }}" class="btn btn-primary">Add Class
+</a>
+<a href="{{ url_for('show_all') }}" class="btn btn-primary">View Students
+</a>
+</center>
+
+{% endblock %}
