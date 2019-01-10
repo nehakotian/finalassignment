@@ -58,3 +58,4 @@ def test_delete(test_resp_code):
     abc = test_resp_code
     resp = abc.post('/delete', data=dict_delete)
     assert resp.status_code == 302
+
