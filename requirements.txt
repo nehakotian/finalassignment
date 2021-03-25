@@ -44,7 +44,7 @@ pytest-coverage==0.0
 python-dateutil==2.7.5
 python-editor==1.0.3
 pywin32==224
-PyYAML==3.13
+PyYAML==5.4
 requests==2.21.0
 six==1.12.0
 SQLAlchemy==1.2.15
